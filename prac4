@@ -1,0 +1,14 @@
+import numpy as np
+nr = int(input("Enter the number of rows: "))
+nc = int(input("Enter the number of columns: "))
+#coefficient_matrix
+coefficient_entries = list(map(float, input("Enter the coefficient entries (space-separated): ").split()))
+coefficient_matrix = np.array(coefficient_entries).reshape(nr, nc)
+print('coefficient_matrix:\n',coefficient_matrix,'\n')
+#column_matrix
+column_entries=list(map(float, input("Enter the column entries (space-separated): ").split()))
+column_matrix=np.array(column_entries).reshape(nr, 1)
+print('column_matrix:\n',column_matrix,'\n')
+#solution
+sol_mat=np.linalg.solve(coefficient_matrix,column_matrix)
+print('solution:\n',sol_mat,'\n')
